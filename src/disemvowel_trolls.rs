@@ -1,12 +1,11 @@
+/// First attempt before googling and learning about replace.
+/*
 fn disemvowel(s: &str) -> String {
     s.chars()
-        .filter(|x| !['a', 'e', 'i', 'o', 'u'].contains(x.to_lowercase()))
+        .filter(|x| !['a', 'e', 'i', 'o', 'u'].contains(&x.to_lowercase().next().unwrap()))
         .collect::<String>()
 }
-
-fn get_count(string: &str) -> usize {
-    string
-        .chars()
-        .filter(|x| ['a', 'e', 'i', 'o', 'u'].contains(x))
-        .count() // removing collect and len which was accomplishing the samething
+*/
+fn disemvowel(s: &str) -> String {
+    s.replace(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'], "")
 }
